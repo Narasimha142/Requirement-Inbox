@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requirement Inbox</title>
+<meta name="description" content="A Chrome extension that pulls job requirements from Gmail, Dice and job boards, filters them to your profile, and lets you reply in bulk.">
+<link rel="icon" href="extension/icons/icon48.png">
+<style>
+  :root { --bg:#f7f8fa; --card:#fff; --text:#1d2330; --muted:#5b6475; --line:#e3e6ec; --accent:#2457d6; --accent-text:#fff; --code:#eef1f6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#12151b; --card:#1a1f27; --text:#e7eaf0; --muted:#9aa3b2; --line:#2a313c; --accent:#6b93ff; --accent-text:#0d1320; --code:#232a35; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:48px 16px 64px; }
+  header { display:flex; align-items:center; gap:16px; margin-bottom:8px; }
+  header img { width:56px; height:56px; }
+  h1 { font-size:2rem; margin:0; }
+  .tag { color:var(--muted); margin:0 0 28px; }
+  .actions { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:36px; }
+  .btn { display:inline-block; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:600; border:1px solid var(--line); color:var(--text); background:var(--card); }
+  .btn.primary { background:var(--accent); color:var(--accent-text); border-color:var(--accent); }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:20px; }
+  h2 { font-size:1.15rem; margin:0 0 10px; }
+  ul, ol { margin:0; padding-left:22px; }
+  li { margin:4px 0; }
+  code { background:var(--code); padding:1px 6px; border-radius:4px; font-size:.9em; }
+  pre { background:var(--code); padding:14px; border-radius:8px; overflow-x:auto; font-size:.88em; line-height:1.5; margin:0; }
+  a { color:var(--accent); }
+  footer { color:var(--muted); font-size:.9em; text-align:center; margin-top:32px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="extension/icons/icon128.png" alt="">
+    <h1>Requirement Inbox</h1>
+  </header>
+  <p class="tag">A Chrome extension that pulls job requirements from Gmail, Dice, job boards and startup job posts, filters them to your profile, lets you reply to many at once with your resume attached, and tracks replies and applications.</p>
+
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/narasimha142/Requirement-Inbox/archive/refs/heads/main.zip">Download ZIP</a>
+    <a class="btn" href="https://github.com/narasimha142/Requirement-Inbox/blob/main/docs/SETUP.md">Setup guide</a>
+    <a class="btn" href="https://github.com/narasimha142/Requirement-Inbox">View on GitHub</a>
+  </div>
+
+  <section>
+    <h2>What it does</h2>
+    <ul>
+      <li>Reads requirement emails from Gmail and job-alert emails from Indeed, ZipRecruiter, Glassdoor and Monster</li>
+      <li>Pulls jobs from Dice and Hacker News "Who is hiring" posts</li>
+      <li>Filters out junk and roles that don't match your profile</li>
+      <li>Sends bulk replies with your resume attached and tracks follow-ups</li>
+      <li>Runs entirely in your browser with your own Google sign-in, so there's no server</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Install</h2>
+    <ol>
+      <li>Download the ZIP above and unzip it somewhere you'll keep it.</li>
+      <li>Open <code>chrome://extensions</code> and turn on <strong>Developer mode</strong>.</li>
+      <li>Click <strong>Load unpacked</strong> and choose the <code>extension</code> folder.</li>
+      <li>Follow the <a href="https://github.com/narasimha142/Requirement-Inbox/blob/main/docs/SETUP.md">setup guide</a> to connect Gmail.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Repository layout</h2>
+<pre>Requirement-Inbox/
+├── index.html          ← this page (GitHub Pages)
+├── docs/
+│   └── SETUP.md        ← full setup guide
+└── extension/          ← load this folder in Chrome
+    ├── manifest.json
+    ├── background.js
+    ├── popup.html / popup.js
+    ├── dashboard.html / dashboard.js
+    ├── content.js / dice-content.js / content.css
+    ├── styles.css
+    ├── icons/          ← extension icons
+    └── lib/            ← sync, Gmail, Dice, parsers, pdf.js, mammoth</pre>
+  </section>
+
+  <footer>The dashboard only runs inside the installed extension, because it uses Chrome extension APIs.</footer>
+</main>
+</body>
+</html>
