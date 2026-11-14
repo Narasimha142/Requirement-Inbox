@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Requirement Inbox</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="popup">
+  <div class="pwrap">
+    <div class="row-flex" style="justify-content:space-between">
+      <h2>Requirement Inbox</h2>
+      <span id="acct" class="note"></span>
+    </div>
+    <section class="stats" id="stats" aria-label="Counts"></section>
+    <p class="note" id="syncline"></p>
+    <div id="msg"></div>
+    <div class="row-flex">
+      <button class="btn primary" id="open">Open dashboard</button>
+      <button class="btn" id="fetch">Fetch now</button>
+    </div>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
